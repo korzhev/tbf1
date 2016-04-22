@@ -1,0 +1,40 @@
+{
+  "name": "tbf1",
+  "version": "1.0.0",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-interface": "^2.0.3",
+    "coveralls": "^2.11.9",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "main": "bot.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha",
+    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/korzhev/tbf1.git"
+  },
+  "keywords": [
+    "eventloop",
+    "latency",
+    "monitor",
+    "monitoring"
+  ],
+  "author": [
+    "Vladimir Korzhev <amv12dbr9@yandex.ru>",
+    "Alexey Nechaev"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.21.1",
+    "redis": "^2.6.0-1"
+  }
+}
