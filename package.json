@@ -22,15 +22,9 @@
     "type": "git",
     "url": "https://github.com/korzhev/tbf1.git"
   },
-  "keywords": [
-    "eventloop",
-    "latency",
-    "monitor",
-    "monitoring"
-  ],
   "author": [
-    "Vladimir Korzhev <amv12dbr9@yandex.ru>",
-    "Alexey Nechaev"
+    "Vladimir Korzhev <amv12dbr9@gmail.com>",
+    "Alexey Nechaev <lexanechaev@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
