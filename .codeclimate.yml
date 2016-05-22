@@ -2,9 +2,9 @@ engines:
   fixme:
     enabled: true
   eslint:
-    enabled: true
+    enabled: false
   nodesecurity:
-    enabled: true
+    enabled: false
   markdownlint:
     enabled: true
   duplication:
@@ -12,3 +12,4 @@ engines:
     config:
       languages:
         - javascript
+exclude_paths: ['node_modules', 'test']

@@ -5,18 +5,29 @@
     "chai": "^3.5.0",
     "chai-interface": "^2.0.3",
     "coveralls": "^2.11.9",
-    "eslint": "^2.8.0",
-    "eslint-config-airbnb": "^8.0.0",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
-    "sinon": "^1.17.3",
+    "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
   },
-  "main": "bot.js",
+  "main": "app.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha",
+    "redis": "sudo docker run --name telegram-redis -d redis ",
+    "stop_redis": "sudo docker stop telegram-redis",
     "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
-    "start": "node bot.js"
+    "coverage_silenced": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*; true",
+    "lint": "./node_modules/eslint/bin/eslint.js ./lib/culculator.js; true",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "codeclimate": "sudo docker run --interactive --tty --rm --env CODE_PATH=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze",
+    "bot": "node app.js",
+    "parser": "node app.js",
+    "admin": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +40,6 @@
   "license": "MIT",
   "dependencies": {
     "node-telegram-bot-api": "^0.21.1",
-    "redis": "^2.6.0-1"
+    "redis": "^2.6.0-2"
   }
 }
