@@ -4,7 +4,7 @@ engines:
   eslint:
     enabled: false
   nodesecurity:
-    enabled: false
+    enabled: true
   markdownlint:
     enabled: true
   duplication:
@@ -12,4 +12,4 @@ engines:
     config:
       languages:
         - javascript
-exclude_paths: ['node_modules', 'test']
+exclude_paths: ['node_modules', '.idea']

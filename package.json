@@ -18,16 +18,16 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/_mocha",
-    "redis": "sudo docker run --name telegram-redis -d redis ",
+    "redis": "sudo docker start telegram-redis",
     "stop_redis": "sudo docker stop telegram-redis",
     "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*",
     "coverage_silenced": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*; true",
     "lint": "./node_modules/eslint/bin/eslint.js ./lib/culculator.js; true",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "codeclimate": "sudo docker run --interactive --tty --rm --env CODE_PATH=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate analyze",
-    "bot": "node app.js",
-    "parser": "node app.js",
-    "admin": "node app.js"
+    "codeclimate": "npm shrinkwrap && sudo codeclimate analyze",
+    "bot": "node app.js --role=bot",
+    "parser": "node app.js --role=parser",
+    "admin": "node app.js --role=web"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,11 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "co": "^4.6.0",
+    "feedparser": "^1.1.4",
+    "koa": "^1.2.0",
+    "minimist": "^1.2.0",
     "node-telegram-bot-api": "^0.21.1",
-    "redis": "^2.6.0-2"
+    "redis": "^2.6.1"
   }
 }
