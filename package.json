@@ -43,7 +43,7 @@
     "feedparser": "^1.1.4",
     "koa": "^1.2.0",
     "minimist": "^1.2.0",
-    "node-telegram-bot-api": "^0.21.1",
+    "node-telegram-bot-api": "^0.23.3",
     "redis": "^2.6.1"
   }
 }
